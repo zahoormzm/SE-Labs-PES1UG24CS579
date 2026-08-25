@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="990" viewBox="0 0 1400 990">
   <defs>
     <marker id="open-arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
       <path d="M 1 1 L 11 6 L 1 11 Z" fill="white" stroke="#344054" stroke-width="1.4"/>
     </marker>
     <style>
-      .title { font: 700 28px Arial, sans-serif; fill: #17365D; }
-      .subtitle { font: 400 15px Arial, sans-serif; fill: #5B6573; }
-      .boundary { fill: #FBFCFE; stroke: #17365D; stroke-width: 2.2; rx: 14; }
-      .boundary-label { font: 700 17px Arial, sans-serif; fill: #17365D; }
-      .usecase { fill: #EAF2FF; stroke: #2F66D0; stroke-width: 2.1; }
-      .uc-code { font: 700 13px Arial, sans-serif; fill: #2F66D0; }
-      .uc-title { font: 600 15px Arial, sans-serif; fill: #182230; }
-      .actor { fill: white; stroke: #182230; stroke-width: 2.2; stroke-linecap: round; }
-      .actor-label { font: 700 15px Arial, sans-serif; fill: #182230; }
-      .assoc { fill: none; stroke: #667085; stroke-width: 1.8; }
-      .dependency { fill: none; stroke: #344054; stroke-width: 1.8; stroke-dasharray: 9 6; marker-end: url(#open-arrow); }
-      .stereotype { font: italic 14px Arial, sans-serif; fill: #344054; paint-order: stroke; stroke: white; stroke-width: 5px; stroke-linejoin: round; }
-      .condition { font: 12px Arial, sans-serif; fill: #5B6573; }
-      .legend { font: 13px Arial, sans-serif; fill: #344054; }
+      .title { font: 700 24px Arial, sans-serif; fill: #000000; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #333333; }
+      .boundary { fill: #FFFFFF; stroke: #000000; stroke-width: 1.7; }
+      .boundary-label { font: 700 16px Arial, sans-serif; fill: #000000; }
+      .usecase { fill: #FFFFFF; stroke: #000000; stroke-width: 1.5; }
+      .uc-code { font: 700 12.5px Arial, sans-serif; fill: #000000; }
+      .uc-title { font: 600 15px Arial, sans-serif; fill: #000000; }
+      .actor { fill: white; stroke: #000000; stroke-width: 1.8; stroke-linecap: round; }
+      .actor-label { font: 700 15px Arial, sans-serif; fill: #000000; }
+      .assoc { fill: none; stroke: #444444; stroke-width: 1.4; }
+      .dependency { fill: none; stroke: #000000; stroke-width: 1.5; stroke-dasharray: 8 6; marker-end: url(#open-arrow); }
+      .stereotype { font: italic 13px Arial, sans-serif; fill: #000000; paint-order: stroke; stroke: white; stroke-width: 5px; stroke-linejoin: round; }
+      .condition { font: 11.5px Arial, sans-serif; fill: #444444; }
+      .footer { font: 12px Arial, sans-serif; fill: #000000; }
     </style>
   </defs>
-  <rect x="0" y="0" width="1400" height="900" fill="white"/>
+  <rect x="0" y="0" width="1400" height="990" fill="white"/>
   <text x="70" y="54" class="title">UML Use-Case Diagram</text>
   <text x="70" y="82" class="subtitle">Airport Lost Luggage Claim &amp; Tracking Portal | PES1UG24CS579 | Lab 1</text>
+  <line x1="70" y1="101" x2="1330" y2="101" stroke="#777777" stroke-width="1"/>
 
-  <rect x="270" y="110" width="860" height="690" class="boundary"/>
-  <rect x="292" y="126" width="350" height="34" rx="7" fill="#17365D"/>
-  <text x="310" y="149" class="boundary-label" fill="white" style="fill:white">Airport Lost Luggage Portal</text>
+  <rect x="270" y="125" width="860" height="730" class="boundary"/>
+  <text x="292" y="155" class="boundary-label">Airport Lost Luggage Portal</text>
 
   <!-- Actor associations are drawn first so use-case fills mask routed lines cleanly. -->
   <path d="M 145 225 L 338 230" class="assoc"/>
@@ -116,10 +116,7 @@
   <path d="M 1030 425 L 1080 630 L 1018 680" class="dependency"/>
   <text x="1060" y="603" text-anchor="end" class="stereotype">«include»</text>
 
-  <!-- Legend -->
-  <line x1="300" y1="842" x2="370" y2="842" class="assoc"/>
-  <text x="382" y="847" class="legend">Actor association</text>
-  <line x1="570" y1="842" x2="640" y2="842" class="dependency"/>
-  <text x="653" y="847" class="legend">Dependency direction points to included/base use case</text>
-  <text x="1260" y="850" text-anchor="end" class="legend">Both required UML stereotypes are present</text>
+  <line x1="70" y1="944" x2="1330" y2="944" stroke="#777777" stroke-width="1"/>
+  <text x="70" y="968" class="footer">PES1UG24CS579</text>
+  <text x="1330" y="968" text-anchor="end" class="footer">Page 1</text>
 </svg>
