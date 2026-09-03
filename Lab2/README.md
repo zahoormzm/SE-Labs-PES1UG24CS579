@@ -34,5 +34,6 @@ Problem Statement 30 | SRN: PES1UG24CS579
 | `PES1UG24CS579_Lab2_Jira_Report.docx` | Editable report source |
 | `Jira_Backlog_Plan.md` | Backlog, estimates, priorities, and sprint summary |
 | `01_Epic_and_Stories.jpg` | Jira epic and linked-story evidence |
-| `02_Active_Sprint_Board.jpg` | Jira Active Sprint evidence |
+| `02_Story_Point_Assignments.jpg` | Jira story-point assignments for all five stories |
+| `03_Active_Sprint_Board.jpg` | Jira Active Sprint evidence across To Do, In Progress, and Done |
 | `04_Burndown_Chart.jpg` | Jira burndown report evidence for the completed sprint |
