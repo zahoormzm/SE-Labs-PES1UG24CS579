@@ -13,17 +13,26 @@ SE-Labs-PES1UG24CS579/
     ├── Lab1_Use_Case_Flow.docx
     ├── Lab1_Use_Case_Flow.pdf
     └── README.md
-└── Lab2/
+├── Lab2/
     ├── PES1UG24CS579_Lab2_Jira_Report.docx
     ├── PES1UG24CS579_Lab2_Jira_Report.pdf
     ├── Jira_Backlog_Plan.md
     ├── 01_Epic_and_Stories.jpg
-    ├── 02_Active_Sprint_Board.jpg
+    ├── 02_Story_Point_Assignments.jpg
+    ├── 03_Active_Sprint_Board.jpg
     ├── 04_Burndown_Chart.jpg
+    └── README.md
+└── Lab3/
+    ├── Lab3_UML_Component_Diagram.pdf
+    ├── Lab3_UML_Component_Diagram.png
+    ├── Lab3_UML_Component_Diagram.drawio
+    ├── Lab3_UML_Component_Diagram.svg
+    ├── Lab3_Architecture_Justification.docx
+    ├── Lab3_Architecture_Justification.pdf
     └── README.md
 ```
 
-Each future lab should be added in its own top-level directory (`Lab3`, `Lab4`, and so on).
+Each lab has its own top-level directory. ZIP packages are available at the repository root.
 
 ## Lab 1 project
 
@@ -40,3 +49,12 @@ The Jira submission contains one epic, five estimated and prioritized user stori
 completed sprint, Active Sprint evidence, a burndown chart, and the required reflection.
 
 See [`Lab2/README.md`](Lab2/README.md) for the deliverable checklist.
+
+## Lab 3 project
+
+A layered component model for the same airport portal, with 10 components, 11
+provided/required interface pairs and a one-page architecture justification. The
+submission includes PDF/PNG exports, an editable diagrams.net source, and a
+scenario review with architectural comparison and requirement traceability.
+
+See [`Lab3/README.md`](Lab3/README.md) for the deliverables and handout checklist.
