@@ -79,18 +79,21 @@ tests are verification only and are not presented as submission gameplay.
 | Updated game | [game.py](game.py) - all four tasks complete |
 | Before video | [videos/PES1UG24CS579_before.mp4](videos/PES1UG24CS579_before.mp4) - 10.000 seconds, genuine recorded gameplay |
 | After video | Pending genuine recording; save as `videos/PES1UG24CS579_after.mp4` after duration/content verification |
-| Actual chat-history PDF | [chat/PES1UG24CS579_Lab4_Chat_History.pdf](chat/PES1UG24CS579_Lab4_Chat_History.pdf) - actual transcript through 07 October 2026, 11:38:32 IST; refresh after the final conversation messages |
-| Shared chat link | Pending: use Share > Copy link in this chat and add the actual URL here; the sharing tool did not return a URL |
+| Actual chat-history PDF | [chat/PES1UG24CS579_Lab4_Chat_History.pdf](chat/PES1UG24CS579_Lab4_Chat_History.pdf) - four pages, 19 actual messages available in this chat at 07 October 2026, 12:00:03 IST; refresh after any later conversation messages |
+| Shared chat link | Pending: use Share > Copy link in this chat and add the actual URL here |
 
 The before clip is the 00:03-00:13 segment of the student's Desktop recording
 `Screen Recording 2026-10-07 at 11.07.15 AM.mov`, made before the first fix.
 It contains active gameplay and ladder descents. Its audio was omitted; the
 original recording is untouched. The output is 300 frames at 30 fps.
 
-The PDF is generated from the original local conversation transcript, with
-visible student prompts and assistant messages preserved rather than invented
-or summarized. It excludes system metadata, tool calls/results, and private
-reasoning. Its timestamp states exactly how much history it contains.
+The PDF is generated from the actual messages retrieved from this chat,
+including the inherited earlier bug-fix and feature conversation. All three
+student prompts and the available assistant messages are preserved in order,
+rather than invented or summarized. The text of every message was checked
+against the generated PDF. It excludes other chat branches, system metadata,
+tool calls/results, and private reasoning. The cover states the snapshot time
+and message count; later messages require a refreshed export.
 
 ## Record the after video
 
@@ -118,6 +121,17 @@ by itself establish a 30% probability; the repeatable checks verify that rule.
 - [ ] Refresh the actual chat PDF after the final messages.
 - [ ] Add the shared link with the complete conversation snapshot.
 - [ ] Complete final code and evidence review before pushing the personal repo.
+
+## Files retained for review
+
+The submission folder contains the game, pinned dependency list, this README,
+the two useful verification scripts, the actual chat PDF, and the genuine
+before video. Temporary previews and export intermediates are kept outside
+the submission folder. Python caches are ignored and are not deliverables.
+
+The implementation is ready for final code review. The after video and shared
+chat URL are still required before the full evidence package is ready for
+submission. No push is performed as part of this preparation.
 
 ## Separate implementation commits
 
