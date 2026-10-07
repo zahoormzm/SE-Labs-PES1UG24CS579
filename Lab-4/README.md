@@ -133,12 +133,24 @@ To repeat the decision and movement checks from `Lab-4`:
 /Users/zahoormashahir/Documents/ChatGPT/SE/work/lab4-venv/bin/python check_barrel_descent.py
 ```
 
+### Task 2: score-based background implemented
+
+`theme_color(score)` returns the original navy `(15, 15, 25)` below 500 points,
+dark purple `(35, 20, 50)` from 500 through 999 points, and warm dark brown
+`(50, 25, 20)` from 1000 points onward. The colours keep the existing game
+elements readable. Since the colour is calculated from the current score each
+frame, resetting the score to zero immediately restores navy.
+
+Verified rendered backgrounds at scores 0, 499, 500, 999, 1000, and 2500, visually
+checked all three scenes, and checked the actual main-loop restart after a
+1000-point win. The restart restored score zero, normal play, and navy.
+
 ### Remaining work and submission evidence
 
 - Before gameplay video: already recorded, as reported by the student; keep the
   original 10-second recording for submission. Its location has not been supplied.
-- Tasks 2–4: `theme_color`, `on_barrel_jumped`, and `score_multiplier` remain
-  empty for subsequent prompts.
+- Tasks 3–4: `on_barrel_jumped` and `score_multiplier` remain empty for
+  subsequent prompts.
 - After gameplay video: record 10 seconds after all requested changes, showing
   the corrected barrel behaviour and the completed features.
 - Updated code: keep the final version in `Lab-4`.
