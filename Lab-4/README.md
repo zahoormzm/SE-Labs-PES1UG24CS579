@@ -172,11 +172,27 @@ player jumping and barrel movement (302 frames total):
 - Visually checked the displayed label and reran all seven barrel/movement
   checks; all passed. These checks do not replace the final submission video.
 
+### Task 4: score multiplier and HUD implemented
+
+`score_multiplier(score)` returns 1 below 1000 points and 2 at 1000 or above.
+The bonus calculation still receives the score before the jump award is added.
+The HUD shows the current multiplier for the next jump; the floating label shows
+the actual award for the jump just completed. Therefore a jump from 900 to 1000
+shows `+100` while the HUD changes to 2x, and the next jump adds 200 points.
+
+Pressing R resets the player, score, lives, game state, barrels, floating labels,
+and initial one-second barrel spawn delay. Navy and 1x are restored from score 0.
+
+All 10 checks in `check_features.py` and `check_barrel_descent.py` passed. These
+include the 999/1000 boundary, actual main-loop awards from 900 to 1000 and from
+1000 to 1200, HUD text, exact floating bonuses, one callback per barrel, label
+lifetime, and complete restart cleanup including the barrel spawn delay.
+
 ### Remaining work and submission evidence
 
 - Before gameplay video: already recorded, as reported by the student; keep the
   original 10-second recording for submission. Its location has not been supplied.
-- Task 4: `score_multiplier` remains empty for a subsequent prompt.
+- All four code tasks are implemented; final code review remains before pushing.
 - After gameplay video: record 10 seconds after all requested changes, showing
   the corrected barrel behaviour and the completed features.
 - Updated code: keep the final version in `Lab-4`.

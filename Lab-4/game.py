@@ -54,8 +54,8 @@ def update_point_labels(dt):
 
 
 def score_multiplier(score):
-    """Return a multiplier applied to points earned from clearing a barrel, or None for the default 1x."""
-    pass
+    """Use the score before the jump bonus to choose its multiplier."""
+    return 2 if score >= 1000 else 1
 
 
 class Player:
@@ -205,7 +205,7 @@ def draw_scene(screen, font, player, barrels, score, lives, state):
     body = pygame.Rect(0, 0, PLAYER_W, PLAYER_H)
     body.midbottom = (player.pos.x, player.pos.y)
     pygame.draw.rect(screen, (50, 180, 240), body)
-    hud = font.render(f"Score {score}   Lives {lives}   R = reset", True, (240, 240, 240))
+    hud = font.render(f"Score {score}   Multiplier {score_multiplier(score)}x   Lives {lives}   R = reset", True, (240, 240, 240))
     screen.blit(hud, (10, 8))
     for effect in point_labels:
         label = font.render(f"+{effect['points']}", True, (255, 255, 120))
@@ -238,7 +238,7 @@ def main():
                 player.reset()
                 barrels.clear()
                 point_labels.clear()
-                score, lives, state = 0, 3, "play"
+                score, lives, state, spawn_timer = 0, 3, "play", 1.0
         if state == "play":
             player.update(dt, pygame.key.get_pressed())
             spawn_timer -= dt
