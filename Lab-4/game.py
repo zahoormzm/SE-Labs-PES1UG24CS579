@@ -6,6 +6,8 @@ PLAYER_W, PLAYER_H = 20, 28
 BARREL_R, BARREL_SPEED = 10, 140
 WALK_SPEED, CLIMB_SPEED, JUMP_SPEED, GRAVITY = 170, 110, 380, 900
 BG = (15, 15, 25)
+POINT_LABEL_LIFETIME = 1.0
+point_labels = []
 
 # (x_left, x_right, y_at_left, y_at_right)
 PLATFORMS = [
@@ -36,8 +38,19 @@ def theme_color(score):
 
 
 def on_barrel_jumped(player, barrel):
-    """Called when the player clears a barrel; add a bonus effect here."""
-    pass
+    """Show the points actually awarded at the cleared barrel's position."""
+    point_labels.append({
+        "pos": pygame.Vector2(barrel.pos.x, barrel.pos.y - BARREL_R - 8),
+        "points": barrel.jump_points,
+        "remaining": POINT_LABEL_LIFETIME,
+    })
+
+
+def update_point_labels(dt):
+    for label in point_labels:
+        label["pos"].y -= 30 * dt
+        label["remaining"] -= dt
+    point_labels[:] = [label for label in point_labels if label["remaining"] > 0]
 
 
 def score_multiplier(score):
@@ -132,6 +145,7 @@ class Barrel:
         self.ladder = None
         self.vy = 0
         self.scored = False
+        self.jump_points = 0
         self.skip = set()
         self.pos = pygame.Vector2(KONG_POS[0] + 40, PLATFORMS[4][2] - BARREL_R)
 
@@ -193,6 +207,9 @@ def draw_scene(screen, font, player, barrels, score, lives, state):
     pygame.draw.rect(screen, (50, 180, 240), body)
     hud = font.render(f"Score {score}   Lives {lives}   R = reset", True, (240, 240, 240))
     screen.blit(hud, (10, 8))
+    for effect in point_labels:
+        label = font.render(f"+{effect['points']}", True, (255, 255, 120))
+        screen.blit(label, label.get_rect(midbottom=effect["pos"]))
     if state != "play":
         text = "YOU WIN! Press R" if state == "win" else "GAME OVER - Press R"
         label = font.render(text, True, (255, 255, 120))
@@ -206,10 +223,12 @@ def main():
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 28)
     player, barrels = Player(), []
+    point_labels.clear()
     score, lives, state, spawn_timer = 0, 3, "play", 1.0
     running = True
     while running:
         dt = min(clock.tick(60) / 1000, 0.05)
+        update_point_labels(dt)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -218,6 +237,7 @@ def main():
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_r:
                 player.reset()
                 barrels.clear()
+                point_labels.clear()
                 score, lives, state = 0, 3, "play"
         if state == "play":
             player.update(dt, pygame.key.get_pressed())
@@ -232,12 +252,14 @@ def main():
                     lives -= 1
                     player.reset()
                     barrels.clear()
+                    point_labels.clear()
                     state = "play" if lives > 0 else "lose"
                     break
                 above = 0 < barrel.pos.y - player.pos.y + BARREL_R < 40
                 if not player.on_ground and above and abs(barrel.pos.x - player.pos.x) < 12 and not barrel.scored:
                     barrel.scored = True
-                    score += int(100 * (score_multiplier(score) or 1))
+                    barrel.jump_points = int(100 * (score_multiplier(score) or 1))
+                    score += barrel.jump_points
                     on_barrel_jumped(player, barrel)
             barrels[:] = [b for b in barrels if b.pos.y < HEIGHT + 30]
             if player.center().distance_to(pygame.Vector2(PRINCESS_POS)) < 24:

@@ -145,12 +145,38 @@ Verified rendered backgrounds at scores 0, 499, 500, 999, 1000, and 2500, visual
 checked all three scenes, and checked the actual main-loop restart after a
 1000-point win. The restart restored score zero, normal play, and navy.
 
+### Task 3: floating jump-points label implemented
+
+`on_barrel_jumped(player, barrel)` keeps its original two-argument interface.
+The scoring code calculates the integer bonus once, stores it as
+`barrel.jump_points`, adds that same amount to the score, and then calls the
+callback. This lets the label show the actual award, including any future
+multiplier, without calculating the bonus again.
+
+The callback creates a yellow `+points` label above the barrel's position. It
+rises at 30 pixels per second and expires after one second. The existing
+`barrel.scored` flag keeps the callback to one invocation per cleared barrel.
+Effects continue to expire even when play ends. Starting a fresh game, pressing
+R, or losing a life clears temporary labels.
+
+Verified in two controlled runs of the real game loop and display, using actual
+player jumping and barrel movement (302 frames total):
+
+- A successful jump awarded 100 points and created exactly one `+100` label.
+- A test-only 2.5x multiplier awarded 250 points and created exactly one `+250`
+  label. `score_multiplier` itself remains unimplemented for Task 4.
+- The score calculation and callback each ran once despite repeated frames.
+- The label rose 15 pixels over half a second and expired after 1.00 second.
+- Restarting while a label was visible cleared it, reset the player and score,
+  and a fresh game also discarded stale effects.
+- Visually checked the displayed label and reran all seven barrel/movement
+  checks; all passed. These checks do not replace the final submission video.
+
 ### Remaining work and submission evidence
 
 - Before gameplay video: already recorded, as reported by the student; keep the
   original 10-second recording for submission. Its location has not been supplied.
-- Tasks 3–4: `on_barrel_jumped` and `score_multiplier` remain empty for
-  subsequent prompts.
+- Task 4: `score_multiplier` remains empty for a subsequent prompt.
 - After gameplay video: record 10 seconds after all requested changes, showing
   the corrected barrel behaviour and the completed features.
 - Updated code: keep the final version in `Lab-4`.
