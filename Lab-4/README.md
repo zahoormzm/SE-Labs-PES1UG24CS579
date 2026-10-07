@@ -89,3 +89,58 @@ Submission is only the following three things:
 - [] A 10-second video of gameplay **before** your changes, showing the bug/broken behavior
 - [] A 10-second video of gameplay **after** your changes, showing the bug fixed and the new features working
 - [] The Chat/LLM used page link, with the complete chat history
+
+---
+
+## PES1UG24CS579 — Lab 4 progress
+
+Assigned repository: https://github.com/SETAPESU26/30_donkeykong
+
+All assignment changes are maintained in this personal repository's `Lab-4` folder.
+
+### Task 1: ladder-descent probability fixed
+
+The original `Barrel.update` checked `random.random() < 0.7`. Since that random
+value is uniformly distributed from 0 (inclusive) to 1 (exclusive), this made
+about 70% of eligible ladder encounters descend. The check is now
+`random.random() < 0.3`, giving about a 30% chance at each eligible encounter.
+Exactly `0.3` continues rolling. A finite run may vary around 30%.
+
+The existing `self.skip.add(index)` still happens before the probability check.
+Both accepted and rejected encounters are remembered, so subsequent frames or
+revisits do not give that barrel another decision at the same ladder. Eligibility,
+rolling, climbing, gravity, scoring, and the three feature functions are unchanged.
+
+Verification on 7 October 2026 using the supplied Python 3.12 environment:
+
+- All seven checks in `check_barrel_descent.py` passed.
+- Controlled values at all four ladders: `0` and `0.299999` descend;
+  `0.3`, `0.300001`, `0.699999`, `0.7`, and `0.999999` continue rolling.
+- Accepted encounters, rejected encounters, repeated frames, and revisits keep
+  one random decision per ladder; ineligible encounters make no random draw.
+- Seed 579, 10,000 encounters through the actual `Barrel.update` logic:
+  2,988 descents (29.88%).
+- Barrel rolling, ladder descent, falling from an edge and landing, plus player
+  walking, jumping, climbing, slope following, and reset passed movement checks.
+- The real game loop and display ran for 661 frames (about 11 seconds) with
+  controlled input. Walking, climbing, slope movement, jumping and landing,
+  reset, barrel spawning, rendering, and a clean quit passed. This was a
+  verification run; it does not replace the final submission video.
+
+To repeat the decision and movement checks from `Lab-4`:
+
+```bash
+/Users/zahoormashahir/Documents/ChatGPT/SE/work/lab4-venv/bin/python check_barrel_descent.py
+```
+
+### Remaining work and submission evidence
+
+- Before gameplay video: already recorded, as reported by the student; keep the
+  original 10-second recording for submission. Its location has not been supplied.
+- Tasks 2–4: `theme_color`, `on_barrel_jumped`, and `score_multiplier` remain
+  empty for subsequent prompts.
+- After gameplay video: record 10 seconds after all requested changes, showing
+  the corrected barrel behaviour and the completed features.
+- Updated code: keep the final version in `Lab-4`.
+- Chat history: export the complete conversation as a document or PDF after
+  completing the assignment, and include the shared chat link required above.
