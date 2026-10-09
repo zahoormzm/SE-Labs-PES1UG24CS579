@@ -7,7 +7,8 @@
 **Personal repository:** SE-Labs-PES1UG24CS579
 
 All assignment changes are inside `Lab-4`. Earlier labs and the original
-assigned repository are preserved. No push or pull request has been made.
+assigned repository are preserved. Submission updates go only to the personal
+repository, `zahoormzm/SE-Labs-PES1UG24CS579`, on `main`; no pull request is created.
 
 ## Setup and play
 
@@ -56,7 +57,7 @@ From `Lab-4`, run:
 /Users/zahoormashahir/Documents/ChatGPT/SE/work/lab4-venv/bin/python -m unittest -v check_features check_barrel_descent
 ```
 
-All **10 checks passed** on 7 October 2026:
+All **10 checks passed** on 7 October 2026 and again on 9 October 2026:
 
 - Controlled random values at all four ladders: below 0.3 descends; exactly
   0.3 and above keeps rolling. Repeated frames and revisits do not reroll.
@@ -77,61 +78,64 @@ tests are verification only and are not presented as submission gameplay.
 | Deliverable | Location / status |
 | --- | --- |
 | Updated game | [game.py](game.py) - all four tasks complete |
-| Before video | [videos/PES1UG24CS579_before.mp4](videos/PES1UG24CS579_before.mp4) - 10.000 seconds, genuine recorded gameplay |
-| After video | Pending genuine recording; save as `videos/PES1UG24CS579_after.mp4` after duration/content verification |
-| Actual chat-history PDF | [chat/PES1UG24CS579_Lab4_Chat_History.pdf](chat/PES1UG24CS579_Lab4_Chat_History.pdf) - four pages, 19 actual messages available in this chat at 07 October 2026, 12:00:03 IST; refresh after any later conversation messages |
-| Shared chat link | Pending: use Share > Copy link in this chat and add the actual URL here |
+| Before video | [videos/PES1UG24CS579_before.mp4](videos/PES1UG24CS579_before.mp4) - exactly 14.000 seconds, source segment 00:04-00:18, as explicitly confirmed by the student |
+| After video | [videos/PES1UG24CS579_after.mp4](videos/PES1UG24CS579_after.mp4) - full supplied recording, 18.633 seconds |
+| Actual chat-history PDF | [chat/PES1UG24CS579_Lab4_Chat_History.pdf](chat/PES1UG24CS579_Lab4_Chat_History.pdf) - six pages, 34 actual messages available in this chat at 09 October 2026, 09:45:50 IST |
 
-The before clip is the 00:03-00:13 segment of the student's Desktop recording
-`Screen Recording 2026-10-07 at 11.07.15 AM.mov`, made before the first fix.
-It contains active gameplay and ladder descents. Its audio was omitted; the
-original recording is untouched. The output is 300 frames at 30 fps.
+The before clip comes from `Screen Recording 2026-10-07 at 11.01.30 AM.mov`.
+The student explicitly chose 00:04-00:18 (14 seconds), despite the original
+assignment asking for ten seconds. It shows active gameplay and ladder descents.
+It replaces the previously selected before clip.
+
+The after clip comes from `Screen Recording 2026-10-09 at 9.38.53 AM.mov`.
+Its full duration is retained. It shows active movement, barrels, reaching the
+princess, the win message, and the score changing to 1000 with the warm background
+and 2x HUD. It does not demonstrate the purple background stage, a floating
+jump-points label, or a +200 jump award. Those behaviours passed the repeatable
+checks; an additional gameplay recording would be needed to show them visually.
+
+Both supplied recordings are genuine gameplay. Original Desktop files are
+untouched. Submission copies retain the recorded audio and are encoded as
+H.264/AAC MP4 at 30 fps and the original 1824 x 1480 resolution. The selected
+durations are documented rather than described as ten-second clips.
 
 The PDF is generated from the actual messages retrieved from this chat,
-including the inherited earlier bug-fix and feature conversation. All three
-student prompts and the available assistant messages are preserved in order,
+including the inherited earlier bug-fix and feature conversation. The student
+prompts, selected answers, and available assistant messages are preserved in order,
 rather than invented or summarized. The text of every message was checked
 against the generated PDF. It excludes other chat branches, system metadata,
 tool calls/results, and private reasoning. The cover states the snapshot time
-and message count; later messages require a refreshed export.
+and message count; later messages require a refreshed export. The student asked
+to submit the PDF only, so no shared chat URL is included in this repository.
 
-## Record the after video
+## Final review
 
-1. Run the completed `game.py` and play normally. Earn points by jumping over
-   barrels; build score before recording so the ten-second clip can show the
-   completed features.
-2. Near 1000 points, press Shift-Command-5 on macOS. Choose Record Selected
-   Portion and frame the game window. Under Options, select `Lab-4/videos`
-   as the save location; use a five-second countdown if helpful.
-3. Record at least ten seconds of active gameplay. Show jump labels, the
-   background change, the HUD switching from 1x to 2x, and a +200 award.
-   If time permits, press R to show cleanup and the navy/1x reset.
-4. Stop from the menu bar. Keep the raw recording until a genuine ten-second
-   segment has been checked and saved as `PES1UG24CS579_after.mp4`.
-
-Do not substitute test scenarios, changed scores, staged screenshots, or an
-animation for the after gameplay recording. A short random sample does not
-by itself establish a 30% probability; the repeatable checks verify that rule.
+Reviewed the game changes against the supplied baseline on 9 October 2026.
+No blocking correctness or maintainability issues were found. The ladder skip
+behaviour, callback interface, pre-bonus multiplier calculation, one label per
+barrel, expiry, and full R reset remain correct. All ten verification checks
+passed. Both MP4s were checked for duration, readability, and gameplay content.
+All actual PDF message texts were verified against the retrieved conversation,
+and its pages were rendered for layout review. Only `Lab-4` changes are included.
 
 ## Submission checklist
 
 - [x] Corrected code and all three feature functions.
-- [x] Genuine ten-second before gameplay video.
-- [ ] Genuine ten-second after gameplay video showing the completed features.
-- [ ] Refresh the actual chat PDF after the final messages.
-- [ ] Add the shared link with the complete conversation snapshot.
-- [ ] Complete final code and evidence review before pushing the personal repo.
+- [x] Requested before gameplay segment, 00:04-00:18 (14 seconds).
+- [x] Full supplied after gameplay recording (18.633 seconds), with scope noted above.
+- [x] Actual chat PDF refreshed through the stated snapshot; PDF only as requested.
+- [x] Final code and evidence review completed before pushing the personal repo.
 
 ## Files retained for review
 
 The submission folder contains the game, pinned dependency list, this README,
-the two useful verification scripts, the actual chat PDF, and the genuine
-before video. Temporary previews and export intermediates are kept outside
+the two useful verification scripts, the actual chat PDF, and both genuine
+gameplay videos. Temporary previews and export intermediates are kept outside
 the submission folder. Python caches are ignored and are not deliverables.
 
-The implementation is ready for final code review. The after video and shared
-chat URL are still required before the full evidence package is ready for
-submission. No push is performed as part of this preparation.
+The reviewed code and the student-selected evidence are ready to upload to the
+personal repository. The original assignment's ten-second duration requirement
+and the after video's feature-demonstration limitations are stated above.
 
 ## Separate implementation commits
 
