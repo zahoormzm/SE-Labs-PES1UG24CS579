@@ -80,7 +80,7 @@ tests are verification only and are not presented as submission gameplay.
 | Updated game | [game.py](game.py) - all four tasks complete |
 | Before video | [videos/PES1UG24CS579_before.mp4](videos/PES1UG24CS579_before.mp4) - exactly 14.000 seconds, source segment 00:04-00:18, as explicitly confirmed by the student |
 | After video | [videos/PES1UG24CS579_after.mp4](videos/PES1UG24CS579_after.mp4) - full supplied recording, 18.633 seconds |
-| Actual chat-history PDF | [chat/PES1UG24CS579_Lab4_Chat_History.pdf](chat/PES1UG24CS579_Lab4_Chat_History.pdf) - six pages, 34 actual messages available in this chat at 09 October 2026, 09:45:50 IST |
+| Actual chat-history PDF | [chat/PES1UG24CS579_Lab4_Chat_History.pdf](chat/PES1UG24CS579_Lab4_Chat_History.pdf) - four pages, 20 actual messages covering the three assignment prompts and ending with the final response to Task 4 |
 
 The before clip comes from `Screen Recording 2026-10-07 at 11.01.30 AM.mov`.
 The student explicitly chose 00:04-00:18 (14 seconds), despite the original
@@ -100,13 +100,14 @@ H.264/AAC MP4 at 30 fps and the original 1824 x 1480 resolution. The selected
 durations are documented rather than described as ten-second clips.
 
 The PDF is generated from the actual messages retrieved from this chat,
-including the inherited earlier bug-fix and feature conversation. The student
-prompts, selected answers, and available assistant messages are preserved in order,
-rather than invented or summarized. The text of every message was checked
-against the generated PDF. It excludes other chat branches, system metadata,
-tool calls/results, and private reasoning. The cover states the snapshot time
-and message count; later messages require a refreshed export. The student asked
-to submit the PDF only, so no shared chat URL is included in this repository.
+including the inherited earlier bug-fix and feature conversation. It contains
+the three assignment prompts and their assistant conversation, ending at the
+final response to the Task 4 multiplier prompt, as requested. All later
+game-launch, recording, and upload discussion is excluded. The selected message
+texts are preserved in order rather than invented or summarized, and every
+message was checked against the generated PDF. System metadata, tool
+calls/results, private reasoning, and other chat branches are excluded.
+The student asked to submit the PDF only, so no shared chat URL is included.
 
 ## Final review
 
@@ -123,7 +124,7 @@ and its pages were rendered for layout review. Only `Lab-4` changes are included
 - [x] Corrected code and all three feature functions.
 - [x] Requested before gameplay segment, 00:04-00:18 (14 seconds).
 - [x] Full supplied after gameplay recording (18.633 seconds), with scope noted above.
-- [x] Actual chat PDF refreshed through the stated snapshot; PDF only as requested.
+- [x] Actual chat PDF limited to the three assignment prompts through Task 4's final response; PDF only as requested.
 - [x] Final code and evidence review completed before pushing the personal repo.
 
 ## Files retained for review
