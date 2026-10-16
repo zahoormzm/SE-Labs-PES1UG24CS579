@@ -10,6 +10,7 @@
 | 2 | Agile backlog and sprint simulation | Airport Lost Luggage Claim & Tracking Portal | [Lab 2](Lab2/README.md) |
 | 3 | Component modelling and architecture selection | Airport Lost Luggage Claim & Tracking Portal | [Lab 3](Lab3/README.md) |
 | 4 | Game repair and feature implementation | Donkey Kong | [Lab 4](Lab-4/README.md) |
+| 5 | Static code analysis | Electricity Bill Calculator | [Lab 5](Lab5/README.md) |
 
 Each lab folder contains its submission files and a README with relevant details.
 
