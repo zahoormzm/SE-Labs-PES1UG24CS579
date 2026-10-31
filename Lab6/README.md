@@ -78,5 +78,6 @@ contract; they do not invent validation rules for unsupported input types.
 - [Code coverage tests](CodeCoverageTest_vending_machine.py)
 - [Branch coverage tests](BranchCoverageTest_vending_machine.py)
 - [Code coverage report](reports/code_coverage.txt)
+- [Code coverage screenshot](screenshots/code_coverage.png)
 - [Branch coverage report](reports/branch_coverage.txt)
 - [Saved test and initial coverage output](reports)
