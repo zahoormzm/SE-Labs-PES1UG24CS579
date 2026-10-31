@@ -80,4 +80,5 @@ contract; they do not invent validation rules for unsupported input types.
 - [Code coverage report](reports/code_coverage.txt)
 - [Code coverage screenshot](screenshots/code_coverage.png)
 - [Branch coverage report](reports/branch_coverage.txt)
+- [Branch coverage screenshot](screenshots/branch_coverage.png)
 - [Saved test and initial coverage output](reports)
