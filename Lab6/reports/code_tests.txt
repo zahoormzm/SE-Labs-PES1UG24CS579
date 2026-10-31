@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/zahoormashahir/Documents/ChatGPT/SE/source/L6_L7_30_vending_machine/lab6
+configfile: pytest.ini
+collected 18 items
+
+CodeCoverageTest_vending_machine.py ..................                   [100%]
+
+============================== 18 passed in 0.03s ==============================
