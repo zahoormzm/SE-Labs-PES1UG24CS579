@@ -12,6 +12,7 @@
 | 4 | Game repair and feature implementation | Donkey Kong | [Lab 4](Lab-4/README.md) |
 | 5 | Static code analysis | Electricity Bill Calculator | [Lab 5](Lab5/README.md) |
 | 6 | Code and branch coverage | Vending Machine | [Lab 6](Lab6/README.md) |
+| 7 | Fuzz testing with Hypothesis | Vending Machine | [Lab 7](Lab7/README.md) |
 
 Each lab folder contains its submission files and a README with relevant details.
 
