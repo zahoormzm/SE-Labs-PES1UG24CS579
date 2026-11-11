@@ -33,6 +33,8 @@ and continues to the next prompt. Numeric tokens are limited to 64 ASCII digits.
 
 ## Verification
 
+[Before and after terminal screenshots (PDF)](Lab7_Fuzz_Testing_Evidence.pdf)
+
 The three unrestricted-input properties failed against the original program;
 Hypothesis reduced each failure to `None`. The fixed program passes **37 tests**:
 eight properties with 150 passing generated examples each, plus 29 explicit
